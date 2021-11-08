@@ -1,12 +1,16 @@
+valores = [97, 99, 10, 44, 15, 80, 56, 91, 60, 9]
+interes = 38
+
 from arbol import Arbol
 a = Arbol()
-a.agrega(50)
-a.agrega(18)
-a.agrega(74)
-a.agrega(7)
-a.agrega(22)
+
+for valor in valores:
+    a.agrega(valor)
+
+print(a)
 
 def ubicar(nodo, buscado):
+    print("Estamos en", nodo.contenido)
     if nodo.contenido == buscado:
         return True
     if buscado < nodo.contenido and nodo.izquierdo is not None:
@@ -15,5 +19,4 @@ def ubicar(nodo, buscado):
         return ubicar(nodo.derecho, buscado)
     return False
  
-print(ubicar(a.raiz, 15))
-print(ubicar(a.raiz, 22))
+ubicar(a.raiz, interes)

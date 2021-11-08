@@ -1,4 +1,4 @@
-def editdist(p, q, ce = 1, ci = 1, cr = 1):
+def editdist(p, q, ce=1, ci=1, cr=1):
     d = dict()
     np = len(p) + 1
     nq = len(q) + 1
@@ -12,6 +12,7 @@ def editdist(p, q, ce = 1, ci = 1, cr = 1):
             ins = d[(i, j - 1)] + ci
             ree = d[(i - 1, j - 1)] + cr * (p[i - 1] != q[j - 1])
             d[(i, j)] = min(eli, ins, ree)
-    return d[(np -1, nq - 1)]
- 
-print(editdist("esfuerzo", "esperanza"))
+    return d[(np - 1, nq - 1)]
+
+
+print(editdist("sábado", "domingo", 2, 2, 3))
